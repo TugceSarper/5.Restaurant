@@ -1,0 +1,74 @@
+/** VARİABLES **/
+
+$primary_font:'Changa', sans-serif;
+$secondary_font:'Open Sans', sans-serif;
+
+
+$primary_color:#DEB887;
+$secondary_color:#5E2129;
+$date_color:#FFB320;
+$comment_color:#08ABBD;
+$gray_color:#9F9F9F;
+$light_color:#FEFEFE;
+$general-transition:all .5s;
+
+
+/** UTILITIES **/
+
+.bg{
+     &-dark{
+         background-color:$secondary_color; 
+    }
+
+    &-light{
+         background-color: $light_color;
+    }
+}
+
+.ml{
+    &-2{
+        margin-left:2rem;
+    }
+}
+
+.m{
+    &-1{
+        margin: 1rem;
+    }
+}
+
+.text-center{
+    text-align: center;
+}
+
+/** MİXİN **/
+
+ @mixin flex_display($display,$align-items,$justify-content) {
+    display:$display;
+    align-items:$align-items;
+    justify-content:$justify-content;
+     
+ }
+
+@mixin media($screensize){
+
+    @if ($screensize == xlarge){
+        @media(max-width:1100px) { @content };
+             
+    }
+
+    @if ($screensize == large){
+        @media(max-width:992px) { @content };
+             
+    }
+
+    @if ($screensize == medium){
+        @media(max-width:768px) { @content };
+             
+    }
+
+    @if ($screensize == small){
+        @media(max-width:576px) { @content };
+             
+    }
+}
